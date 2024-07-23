@@ -50,5 +50,17 @@
             "Chlorothalonil",
             "Mancozeb"
         ]
+    },
+    {
+        "name": "Out of Domain",
+        "causes": [
+            "out of domain"
+        ],
+        "recommended_solutions": [
+            "out of domain"
+        ],
+        "recommended_pesticide": [
+            "out of domain"
+        ]
     }
 ]

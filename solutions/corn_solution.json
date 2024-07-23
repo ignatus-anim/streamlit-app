@@ -40,7 +40,6 @@
             "Azoxystrobin"
         ]
     },
- 
     {
         "name": "Corn_(maize)__Northern_Leaf_Blight",
         "causes": [
@@ -73,7 +72,6 @@
             "No need for Pesticide"
         ]
     },
-    
     {
         "name": "Corn(maize)__Streak",
         "causes": [
@@ -89,6 +87,18 @@
         "recommended_pesticide": [
             "Imidacloprid",
             "Lambda-cyhalothrin"
+        ]
+    },
+    {
+        "name": "Out of Domain",
+        "causes": [
+            "out of domain"
+        ],
+        "recommended_solutions": [
+            "out of domain"
+        ],
+        "recommended_pesticide": [
+            "out of domain"
         ]
     }
 ]
