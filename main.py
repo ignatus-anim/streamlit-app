@@ -97,7 +97,7 @@ def main():
 
     # HomePage
     if app_mode == "Home":
-        st.header("CROP DISEASE RECOGNITION SYSTEM")
+        st.header("AgriDetect Crop Disease Detection")
         image_path = 'photos/crops.jpeg'
         st.image(image_path, use_column_width=True)
         st.markdown(homeinfo)

@@ -25,7 +25,7 @@ Datasets of this kind open the way for more informed and contextually relevant d
     """
 
 homeinfo = """
-        Welcome to the Plant Disease Recognition System
+        Welcome to the AgriDetect App
 
     Our Mission is to help in identifying plant diseases efficiently. Upload an image of a plant, and our system will analyze it to detect any disease in it
 
