@@ -3,7 +3,6 @@ import tensorflow as tf
 import numpy as np
 import json
 from PIL import Image
-import tempfile
 from textinfo import homeinfo, aboutinfo
 
 # Function to load TFLite model and solution JSON based on selected crop
