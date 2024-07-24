@@ -29,12 +29,19 @@ homeinfo = """
 
     Our Mission is to help in identifying plant diseases efficiently. Upload an image of a plant, and our system will analyze it to detect any disease in it
 
+    ### Selected Crops
+    1. Corn(Maize)
+    2. Tomato
+    3. Pepper
+
     ### How It Works
 
     1. **Upload Image:** Go to the **Disease Recognition** page and upload an image of a plant with suspected diseases.
     2. **Analysis:** Our System will process the image using advanced algorithms to identify potential diseases.
     3. **Results:** View the results and recommendations for further action.
-
+    
+    ### Note: 
+    The app works best when the leaf is taken other than the whole crop branch
 
     ### Why Choose Us?
 

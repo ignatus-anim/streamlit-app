@@ -40,6 +40,13 @@ def check_confidence(prediction):
     confidence = round((float(np.max(prediction)) * 100), 2)
     return confidence
 
+# Function to display warnings for low confidence
+def display_warning(confidence):
+    if confidence < 80:
+        st.warning("Confidence is below 80%. Please upload a clear image.")
+        return True
+    return False
+
 # Function to attend to the crop
 def attender(test_image, interpreter, crop_diseases):
     if st.button("Show Image"):
@@ -52,9 +59,7 @@ def attender(test_image, interpreter, crop_diseases):
         if test_image is not None:
             result_index, prediction = model_prediction(test_image, interpreter)
             confidence = check_confidence(prediction)
-            if confidence < 80:
-                st.warning("Confidence is below 80%. Please upload a clear image.")
-            else:
+            if not display_warning(confidence):
                 disease_name = crop_diseases[result_index]["name"]
                 st.success(f"Model is Predicting, It is  {disease_name}")
                 st.success(f"Confidence = {confidence}%")
@@ -63,31 +68,35 @@ def attender(test_image, interpreter, crop_diseases):
 
     if st.button("Show Cause"):
         if test_image is not None:
-            result_index, _ = model_prediction(test_image, interpreter)
-            disease_cause = crop_diseases[result_index]["causes"]
-            st.write("Causes include:")
-            for cause in disease_cause:
-                st.success(cause)
+            result_index, prediction = model_prediction(test_image, interpreter)
+            confidence = check_confidence(prediction)
+            if not display_warning(confidence):
+                disease_cause = crop_diseases[result_index]["causes"]
+                st.write("Causes include:")
+                for cause in disease_cause:
+                    st.success(cause)
         else:
             st.write("Please upload an image first")
 
     if st.button("Recommend Solution"):
         if test_image is not None:
-            result_index, _ = model_prediction(test_image, interpreter)
-            disease_solution = crop_diseases[result_index]["recommended_solutions"]
-
-            st.write("Some Recommended solutions include:")
-            for solution in disease_solution:
-                st.success(solution)
+            result_index, prediction = model_prediction(test_image, interpreter)
+            confidence = check_confidence(prediction)
+            if not display_warning(confidence):
+                disease_solution = crop_diseases[result_index]["recommended_solutions"]
+                st.write("Some Recommended solutions include:")
+                for solution in disease_solution:
+                    st.success(solution)
 
     if st.button("Recommend Pesticide"):
         if test_image is not None:
-            result_index, _ = model_prediction(test_image, interpreter)
-            disease_pesticide = crop_diseases[result_index]["recommended_pesticide"]
-
-            st.write("Some Recommended solutions include:")
-            for pesticide in disease_pesticide:
-                st.success(pesticide)
+            result_index, prediction = model_prediction(test_image, interpreter)
+            confidence = check_confidence(prediction)
+            if not display_warning(confidence):
+                disease_pesticide = crop_diseases[result_index]["recommended_pesticide"]
+                st.write("Some Recommended solutions include:")
+                for pesticide in disease_pesticide:
+                    st.success(pesticide)
 
 def main():
     # SideBar
